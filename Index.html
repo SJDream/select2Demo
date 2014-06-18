@@ -1,4 +1,5 @@
 <head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
     <link href="CSS/select2.css" rel="stylesheet"/>
     <script src="JS/jquery-1.11.1.min.js"></script>
     <script src="JS/select2.min.js"></script>
@@ -6,24 +7,37 @@
     <script>
         $(document).ready(function() { 
         	$("#e1").select2({
-	        	multiple: true
+	        	placeholder: "Select One Name",
+	        	allowClear: true
         	}); 
         });
         
         function alertMsg() {
 	        alert($("#e1").val());
         }
+        
+        function ShowValue() { 
+        	$("#spanMessage").text($("#e1").val());
+        	//alert($("#e1").val());
+        }
     </script>
 </head>
 <body>
-    <select id="e1" style="width:150px">
+    <select multiple="true" id="e1" style="width:175px">
     	<option></option>
+    	<optgroup label="English">
         <option value="AL">Alabama</option>
         <option value="WY">Wyoming</option>
+        </optgroup>
+        <optgroup label="Chinese">
         <option value="SJ.Lee">李顺杰</option>
         <option value="Jingmin.Lee">李京旻</option>
         <option value="Huan.Tang">汤欢</option>
         <option value="DeHua.Liu">刘德华</option>
         <option value="Baggage.Zeng">贱人曾</option>
+        </optgroup>
     </select>
+    &nbsp;&nbsp;
+    <input type="button" id="btnShow" value="Click" onClick="ShowValue();"/>
+    <span id="spanMessage" value=""></span>
 </body>

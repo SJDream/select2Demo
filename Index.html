@@ -1,0 +1,29 @@
+<head>
+    <link href="CSS/select2.css" rel="stylesheet"/>
+    <script src="JS/jquery-1.11.1.min.js"></script>
+    <script src="JS/select2.min.js"></script>
+    <script src="langs/select2_locale_zh-CN.js"></script>
+    <script>
+        $(document).ready(function() { 
+        	$("#e1").select2({
+	        	multiple: true
+        	}); 
+        });
+        
+        function alertMsg() {
+	        alert($("#e1").val());
+        }
+    </script>
+</head>
+<body>
+    <select id="e1" style="width:150px">
+    	<option></option>
+        <option value="AL">Alabama</option>
+        <option value="WY">Wyoming</option>
+        <option value="SJ.Lee">李顺杰</option>
+        <option value="Jingmin.Lee">李京旻</option>
+        <option value="Huan.Tang">汤欢</option>
+        <option value="DeHua.Liu">刘德华</option>
+        <option value="Baggage.Zeng">贱人曾</option>
+    </select>
+</body>
